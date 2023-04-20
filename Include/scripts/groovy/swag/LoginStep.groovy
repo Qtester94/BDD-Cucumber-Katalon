@@ -50,29 +50,28 @@ class LoginStep {
 		WebUI.openBrowser('')
 		WebUI.navigateToUrl('https://www.saucedemo.com/')
 	}
-	
-	@When ("User enters (.*) and (.*)")		
+
+	@When ("User enters (.*) and (.*)")
 	def enterCredentials(String username, String password) {
 		WebUI.setText(findTestObject('Object Repository/Swag/Page_Swag Labs/input_Swag Labs_user-name'), username)
 		WebUI.setEncryptedText(findTestObject('Object Repository/Swag/Page_Swag Labs/input_Swag Labs_password'), password)
 	}
-	
+
 	@And ("Click on the login button")
 	def clickOnLoginButton() {
 		WebUI.click(findTestObject('Object Repository/Swag/Page_Swag Labs/input_Swag Labs_login-button'))
 	}
-	
+
 	@Then ("User is navigated to homepage")
 	def verifyHomePage() {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Swag/Page_Swag Labs/div_Swag Labs'), 0)
 		WebUI.closeBrowser()
 	}
-	
+
 	@Then ("The error message appears")
 	def verifyFaildLogin() {
 		WebUI.verifyElementPresent(findTestObject('Object Repository/Swag/Page_Swag Labs/div_Epic sadface Username and password do n_e703ed'),
-			0)
+				0)
 		WebUI.closeBrowser()
 	}
-	
 }
