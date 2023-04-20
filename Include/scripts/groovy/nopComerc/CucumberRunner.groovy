@@ -30,6 +30,5 @@ import cucumber.api.junit.Cucumber
 @RunWith(Cucumber.class)
 @CucumberOptions(features="Include/features/NopComerc", glue="", plugin=["pretty", "html:ReportsFolder"])
 public class CucumberRunner {
-		
 	
 }
