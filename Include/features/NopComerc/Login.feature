@@ -2,7 +2,7 @@ Feature: Login feature for NopComerc
 
   Scenario Outline: Test login with valid credentials
     Given The user is on the login page NC
-    When User enters <username> and <password> NC
+    When NC User enters <username> and <password>
     And Click on the login button NC
     Then User is navigated to homepage NC
 
